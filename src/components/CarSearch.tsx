@@ -1,5 +1,5 @@
-function CarSearch() {
-  return <div>cars search</div>;
+function dataearch() {
+  return <div>data search</div>;
 }
 
-export default CarSearch;
+export default dataearch;

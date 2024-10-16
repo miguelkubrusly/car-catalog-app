@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { carFormReducer, changeName, changeCost } from "./slices/carFormSlice";
 import {
-  carListReducer,
+  carsReducer,
   changeSearchTerm,
   addCar,
   removeCar,
@@ -10,7 +10,7 @@ import {
 const store = configureStore({
   reducer: {
     carForm: carFormReducer,
-    carList: carListReducer,
+    cars: carsReducer,
   },
 });
 
