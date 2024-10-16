@@ -16,8 +16,9 @@ function CarList() {
   );
   const dispatch = useDispatch();
 
-  // const handleCarDelete = (event: React.MouseEvent<HTMLButtonElement>) => {};
-  // dispatch(removeCar());
+  const handleCarDelete = (car: Car) => {
+    dispatch(removeCar(car.id));
+  };
 
   const renderedList = data.map((car: Car) => {
     return (
@@ -25,7 +26,10 @@ function CarList() {
         <p>
           {car.name} - ${car.cost}
         </p>
-        <button className="button is-danger" /* onClick={handleCarDelete} */>
+        <button
+          className="button is-danger"
+          onClick={() => handleCarDelete(car)}
+        >
           Delete
         </button>
       </div>
