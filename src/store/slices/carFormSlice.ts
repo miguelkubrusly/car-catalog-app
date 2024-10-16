@@ -11,7 +11,7 @@ const carFormSlice = createSlice({
       state.name = action.payload;
     },
     changeCost(state, action) {
-      state.cost = parseFloat(Number(action.payload).toFixed(2));
+      state.cost = action.payload;
     },
   },
 });
