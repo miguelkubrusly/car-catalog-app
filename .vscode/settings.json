@@ -1,3 +1,11 @@
 {
-  "conventionalCommits.scopes": ["store", "form", "global", "list", "app"]
+  "conventionalCommits.scopes": [
+    "store",
+    "form",
+    "global",
+    "list",
+    "app",
+    "env",
+    "vscode"
+  ]
 }
