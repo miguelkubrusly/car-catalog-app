@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { removeCar } from "../store/store";
-
-// import {cars} from "../store/store"
+import filterList from "../hooks/filterList";
 
 //TODO typing
 
@@ -15,8 +14,7 @@ function CarList() {
     dispatch(removeCar(car.id));
   };
 
-  const filteredList = data.filter((car: Car) => car.name.includes(searchTerm));
-
+  const filteredList = filterList(data, searchTerm, "name");
   const renderedList = filteredList.map((car: Car) => {
     return (
       <div key={car.id} className="panel">
