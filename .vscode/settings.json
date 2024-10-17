@@ -9,6 +9,7 @@
     "vscode",
     "search",
     "type",
-    "node"
+    "node",
+    "hooks"
   ]
 }
