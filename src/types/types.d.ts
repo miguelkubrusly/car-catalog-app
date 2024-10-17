@@ -4,6 +4,13 @@ declare global {
     cost: number;
     id: string;
   };
+  type CarListSelector = {
+    data: Car[];
+    searchTerm: string;
+  };
+  type RootState = {
+    cars: CarListSelector;
+  };
 }
 
 export {};

@@ -6,6 +6,8 @@
     "list",
     "app",
     "env",
-    "vscode"
+    "vscode",
+    "search",
+    "type"
   ]
 }
