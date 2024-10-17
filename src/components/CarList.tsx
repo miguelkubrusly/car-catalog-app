@@ -1,18 +1,14 @@
-import { ReducerCreators, Reducer, EnhancedStore } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
 import { removeCar } from "../store/store";
+import React from "react";
+
 // import {cars} from "../store/store"
 
 //TODO typing
 
-type CarListSelector = {
-  data: Car[];
-  searchTerm: string;
-};
-
 function CarList() {
   const { data, searchTerm }: CarListSelector = useSelector(
-    (state: any) => state.cars
+    (state: RootState) => state.cars
   );
   const dispatch = useDispatch();
 
@@ -20,7 +16,9 @@ function CarList() {
     dispatch(removeCar(car.id));
   };
 
-  const renderedList = data.map((car: Car) => {
+  const filteredList = data.filter((car: Car) => car.name.includes(searchTerm));
+
+  const renderedList = filteredList.map((car: Car) => {
     return (
       <div key={car.id} className="panel">
         <p>

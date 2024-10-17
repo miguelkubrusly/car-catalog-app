@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addCar, changeCost, changeName } from "../store/store";
-import { ChangeEvent, FormEvent } from "react";
+import React, { ChangeEvent, FormEvent } from "react";
 
 function CarForm() {
   const { name, cost } = useSelector((state: any) => state.carForm);
