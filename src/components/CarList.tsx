@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
 import { removeCar } from "../store/store";
-import React from "react";
 
 // import {cars} from "../store/store"
 
