@@ -5,10 +5,12 @@ function TotalCarValue() {
   const { data, searchTerm } = useSelector((state: RootState) => state.cars);
 
   const filteredList = searchList(data, searchTerm, "name");
-  const costs: number[] = filteredList.map((car) => car.cost);
-  const totalValue: number = costs.reduce((total, cost) => total + cost, 0);
+  const totalValue: number = filteredList.reduce(
+    (total, car) => total + car.cost,
+    0
+  );
 
-  return <div>{totalValue}</div>;
+  return <div className="car-value">Total Cost: ${totalValue}</div>;
 }
 
 export default TotalCarValue;
