@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
-import filterList from "../hooks/filterList";
+import searchList from "../hooks/searchList";
 
 function TotalCarValue() {
   const { data, searchTerm } = useSelector((state: RootState) => state.cars);
 
-  const filteredList = filterList(data, searchTerm, "name");
+  const filteredList = searchList(data, searchTerm, "name");
   const costs: number[] = filteredList.map((car) => car.cost);
   const totalValue: number = costs.reduce((total, cost) => total + cost, 0);
 

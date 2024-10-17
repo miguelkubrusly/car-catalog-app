@@ -1,4 +1,4 @@
-function filterList<T extends Record<string, any>>(
+function searchList<T extends Record<string, any>>(
   data: T[],
   searchTerm: string,
   method: keyof T
@@ -13,4 +13,4 @@ function filterList<T extends Record<string, any>>(
   });
 }
 
-export default filterList;
+export default searchList;
