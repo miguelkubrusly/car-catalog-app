@@ -3,7 +3,7 @@ import { changeSearchTerm } from "../store/store";
 
 function CarSearch() {
   const { searchTerm }: CarListSelector = useSelector(
-    (state: any) => state.cars
+    (state: RootState) => state.cars
   );
   const dispatch = useDispatch();
 
