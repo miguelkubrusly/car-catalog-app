@@ -1,25 +1,28 @@
 import { useDispatch, useSelector } from "react-redux";
 import { removeCar } from "../store/store";
 import searchList from "../hooks/searchList";
-
-//TODO typing
+import checkSubstringExistance from "../hooks/checkSubstringExistance";
 
 function CarList() {
-  const { data, searchTerm }: CarListSelector = useSelector(
-    (state: RootState) => state.cars
-  );
+  const data = useSelector((state: RootState) => state.cars.data);
+  const searchTerm = useSelector((state: RootState) => state.cars.searchTerm);
+  const name = useSelector((state: RootState) => state.carForm.name);
   const dispatch = useDispatch();
 
   const handleCarDelete = (car: Car) => {
     dispatch(removeCar(car.id));
   };
 
-  const filteredList = searchList(data, searchTerm, "name");
-  const renderedList = filteredList.map((car: Car) => {
+  const filteredList: Car[] = searchList(data, searchTerm, "name");
+  const renderedList: React.ReactNode = filteredList.map((car: Car) => {
+    const bold = name.length > 0 && checkSubstringExistance(car.name, name);
     return (
-      <div key={car.id} className="panel">
+      <div key={car.id} className={`panel`}>
         <p>
-          {car.name} - ${car.cost}
+          <span className={`${bold && "bold"}`}>
+            {car.name.slice(0, name.length)}
+          </span>
+          {car.name.slice(name.length)} - ${car.cost}
         </p>
         <button
           className="button is-danger"

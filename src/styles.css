@@ -30,6 +30,9 @@
 .car-list .panel.bold {
   font-weight: 600;
 }
+.car-list span.bold {
+  font-weight: 600;
+}
 
 .car-list .panel {
   padding: 10px;

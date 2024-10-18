@@ -8,7 +8,14 @@ declare global {
     data: Car[];
     searchTerm: string;
   };
+
+  type CarFormSelector = {
+    name: string;
+    cost: number;
+  };
+
   type RootState = {
+    carForm: CarFormSelector;
     cars: CarListSelector;
   };
 }
